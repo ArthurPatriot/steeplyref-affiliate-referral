@@ -134,4 +134,32 @@ class Steeply_Ref_Admin {
 
 	}
 
+	public function check_is_referral_link() {
+		if (isset($_GET['sp_ref']) and !empty($_GET['sp_ref'])) {
+			$_SESSION['ref_user_id'] = htmlspecialchars(settype($_GET['sp_ref'], 'int'));
+		}
+	}
+	
+	public function registered_is_referral( $user_id ) {
+
+		if (isset($_SESSION['ref_user_id']) and !empty($_SESSION['ref_user_id'])) {
+			global $wpdb;
+
+			$ref_user_id = $_SESSION['ref_user_id'];
+
+			if (get_user_by('ID', $ref_user_id) == false) { return; }
+
+			$table_name = $wpdb->prefix.'st_referrals';
+
+			$insert_data = array(
+				'user_id' => $user_id,
+				'ref_user_id' => $ref_user_id,
+			);
+
+			$wpdb->insert($table_name, $insert_data);
+
+		}
+
+	}
+
 }

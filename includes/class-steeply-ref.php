@@ -161,6 +161,9 @@ class Steeply_Ref {
 
 		$this->loader->add_action( 'wp_dashboard_setup', $plugin_admin, 'add_plugin_dashboard_widget' );
 
+		$this->loader->add_action( 'init', $plugin_admin, 'check_is_referral_link' );
+		$this->loader->add_action( 'user_register', $plugin_admin, 'registered_is_referral' );
+
 	}
 
 	/**

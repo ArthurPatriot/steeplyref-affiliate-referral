@@ -32,7 +32,7 @@ class Steeply_Ref_Activator {
 	public static function activate() {
 		global $wpdb;
 
-		$table_name = $wpdb->prefix.'st_refferals';
+		$table_name = $wpdb->prefix.'st_referrals';
 
 		if ( $wpdb->get_var( "SHOW TABLES LIKE '$table_name'" ) != $table_name ) {
 
