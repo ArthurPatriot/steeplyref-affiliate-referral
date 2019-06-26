@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SteeplyRef - Affiliate & Referral\n"
+"POT-Creation-Date: 2019-06-26 19:07+0300\n"
+"PO-Revision-Date: 2019-06-26 19:07+0300\n"
+"Last-Translator: Artur Khylskyi <arthur.patriot@gmail.com>\n"
+"Language-Team: Artur Khylskyi\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/partials/page-analytics.php:14
+msgid "SteeplyRef - Analytics"
+msgstr "SteeplyRef - Аналитика"
+
+#: admin/partials/page-faq.php:14
+msgid "SteeplyRef - FAQ"
+msgstr "SteeplyRef - FAQ"
+
+#: admin/partials/page-general-settings.php:14
+msgid "SteeplyRef - General Settings"
+msgstr "SteeplyRef - Общие настройки"

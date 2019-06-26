@@ -1,0 +1,27 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+.no-ref-activity {
+    text-align: center;
+}
+
+.no-ref-activity__icon {
+    width: 100px;
+    height: 100px;
+    font-size: 100px;
+    margin: 16px 0 0 0;
+    color: #72777c;
+}
+
+.no-ref-activity__text {
+    color: #72777c;
+    font-size: 16px;
+}
+
+.st-widget-links {
+    text-align: center;
+    border-top: 1px solid #eeeeee;
+    padding: 16px 0 6px 0;
+}
