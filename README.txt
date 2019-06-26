@@ -26,6 +26,9 @@ The plugin is being actively developed. Therefore, I will be happy to help you. 
 = Where to find shortcodes to display information on the page? =
 All information can be found on the FAQ page in the plugin menu.
 
+== Screenshots ==
+1. Example View
+
 == Changelog ==
 
 = 1.0.7 =
