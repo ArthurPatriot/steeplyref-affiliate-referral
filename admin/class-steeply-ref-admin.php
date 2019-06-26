@@ -100,6 +100,26 @@ class Steeply_Ref_Admin {
 
 	}
 
+	public function session_start() {
+
+		if ( ! session_id() ) {
+
+			session_start();
+
+		}
+
+	}
+
+	public function session_close() {
+
+		if ( session_id() ) {
+
+			session_destroy();
+
+		}
+
+	}
+
 	static function render_page_general_settings() {
 		require_once plugin_dir_path(__FILE__) . 'partials/page-general-settings.php';
 	}
@@ -135,8 +155,8 @@ class Steeply_Ref_Admin {
 	}
 
 	public function check_is_referral_link() {
-		if (isset($_GET['sp_ref']) and !empty($_GET['sp_ref'])) {
-			$_SESSION['ref_user_id'] = htmlspecialchars(settype($_GET['sp_ref'], 'int'));
+		if (isset($_GET['st_ref']) and !empty($_GET['st_ref'])) {
+			$_SESSION['ref_user_id'] = htmlspecialchars(settype($_GET['st_ref'], 'int'));
 		}
 	}
 	
@@ -149,7 +169,7 @@ class Steeply_Ref_Admin {
 
 			if (get_user_by('ID', $ref_user_id) == false) { return; }
 
-			$table_name = $wpdb->prefix.'st_referrals';
+			$table_name = ST_REFERRALS;
 
 			$insert_data = array(
 				'user_id' => $user_id,
@@ -157,6 +177,8 @@ class Steeply_Ref_Admin {
 			);
 
 			$wpdb->insert($table_name, $insert_data);
+
+			unset($_SESSION['ref_user_id']);
 
 		}
 

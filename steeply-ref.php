@@ -11,7 +11,7 @@
  * Plugin Name:       SteeplyRef - Affiliate & Referral
  * Plugin URI:        https://allsteeply.com
  * Description:       Affiliate & Referral System for easy integration into your website.
- * Version:           1.0.6
+ * Version:           1.0.7
  * Author:            Artur Khylskyi
  * Author URI:        https://allsteeply.com
  * License:           GPL-2.0+
@@ -28,7 +28,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Currently plugin version.
  */
-define( 'STEEPLY_REF_VERSION', '1.0.6' );
+define( 'STEEPLY_REF_VERSION', '1.0.7' );
 
 /**
  * The code that runs during plugin activation.

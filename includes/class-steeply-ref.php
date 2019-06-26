@@ -74,11 +74,18 @@ class Steeply_Ref {
 		}
 		$this->plugin_name = 'steeply-ref';
 
+		$this->define_static();
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
 
+	}
+
+	private function define_static() {
+		global $wpdb;
+
+		define('ST_REFERRALS', $wpdb->prefix.'st_referrals');
 	}
 
 	/**
@@ -157,6 +164,9 @@ class Steeply_Ref {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
+		$this->loader->add_action( 'init', $plugin_admin, 'session_start' );
+		$this->loader->add_action( 'wp_logout', $plugin_admin, 'session_close' );
+
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_plugin_pages' );
 
 		$this->loader->add_action( 'wp_dashboard_setup', $plugin_admin, 'add_plugin_dashboard_widget' );
@@ -179,6 +189,9 @@ class Steeply_Ref {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+
+		$this->loader->add_shortcode( 'st_ref_link', $plugin_public, 'shortcode_referral_link' );
+		$this->loader->add_shortcode( 'st_ref_count', $plugin_public, 'shortcode_referral_count' );
 
 	}
 

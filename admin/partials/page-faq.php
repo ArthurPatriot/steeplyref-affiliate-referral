@@ -24,7 +24,11 @@
 
     <h2>User Guide</h2>
 
-    <p>Example, Referral link - <?= site_url(); ?>/?sp_ref=[user_id]</p>
+    <p>Example, Referral link - <input class="regular-text" readonly type="text" value="<?= home_url(); ?>/?st_ref=[user_id]"></p>
+
+    <p>Get referral link - <input readonly type="text" value="[st_ref_link]"></p>
+
+    <p>Show Count referral  - <input readonly type="text" value="[st_ref_count]"></p>
 
     <p>I just recently started developing this plugin, if you have ideas for improving it, contact me.</p>
 
