@@ -100,4 +100,38 @@ class Steeply_Ref_Public {
 
 	}
 
+	public function shortcode_referral_link() {
+
+		$user_id = get_current_user_id();
+
+		if ( ! $user_id ) {
+			return '';
+		}
+
+		$ref_link = home_url() . '/?st_ref=' . $user_id;
+
+		return $ref_link;
+
+	}
+
+	public function shortcode_referral_count() {
+		global $wpdb;
+
+		$user_id = get_current_user_id();
+
+		if ( ! $user_id ) {
+			return '';
+		}
+
+		$table_name = ST_REFERRALS;
+		$check = $wpdb->get_var("SELECT COUNT(id) FROM $table_name WHERE ref_user_id = $user_id");
+
+		if ($check == null) {
+			return '';
+		}
+
+		return $check;
+
+	}
+
 }
