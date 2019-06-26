@@ -19,4 +19,3 @@
 	<a href="/wp-admin/admin.php?page=steeply-ref-faq" class="button button-primary st-widget-links__link">FAQ</a>
 	<a href="/wp-admin/admin.php?page=steeply-ref-analytics" class="button button-primary st-widget-links__link">Detailed Analytics</a>
 </div>
-

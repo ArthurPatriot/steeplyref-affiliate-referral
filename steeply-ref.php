@@ -9,7 +9,6 @@
  *
  * @wordpress-plugin
  * Plugin Name:       SteeplyRef - Affiliate & Referral
- * Plugin URI:        https://allsteeply.com
  * Description:       Affiliate & Referral System for easy integration into your website.
  * Version:           1.0.2
  * Author:            Artur Khylskyi
