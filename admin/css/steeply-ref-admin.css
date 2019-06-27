@@ -25,3 +25,234 @@
     border-top: 1px solid #eeeeee;
     padding: 16px 0 6px 0;
 }
+
+.st-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 10px 0 25px 0;
+    align-items: stretch;
+}
+
+.st-flex-content {
+    flex-basis: 80%;
+    margin-right: 25px;
+}
+
+.st-flex-content.st-faq:last-child {
+    margin-right: 0;
+}
+
+.st-flex-sidebar {
+    flex-basis: auto;
+    margin-left: 60px;
+}
+
+.st-widget {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 25px;
+    transition: all 0.2s linear;
+}
+
+.st-widget:hover {
+    -webkit-box-shadow: 0 0 15px 0 #878787;
+    -moz-box-shadow: 0 0 15px 0 #878787;
+    box-shadow: 0 0 12px 0 #878787;
+}
+
+.st-widget:last-child {
+    margin-bottom: 0;
+}
+
+.st-success {
+    background-color: #16a085;
+    color: #ffffff;
+}
+
+.st-danger {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+.st-info {
+    background-color: #2c3e50;
+    color: #ffffff;
+}
+
+.st-blue {
+    background-color: #2980b9;
+    color: #ffffff;
+}
+
+.st-love {
+    background-color: #00bcd4;
+    color: #ffffff;
+}
+
+.st-line-success {
+    border-left: 5px solid #16a085;
+    color: #16a085;
+}
+
+.st-line-danger {
+    border-left: 5px solid #e74c3c;
+    color: #e74c3c;
+}
+
+.st-widget__shortcode {
+    background-color: #ffffff !important;
+    text-align: center;
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.st-widget__title {
+    margin-top: 0;
+    text-align: center;
+}
+
+.st-widget p {
+    font-size: 14px;
+}
+
+.st-widget__faq-title {
+    font-weight: 600;
+    margin-top: 0;
+}
+
+.st-widget__faq-text {
+    margin-bottom: 0;
+}
+
+.st-widget-btn {
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.st-widget-btn:hover {
+    background-color: #2980b9;
+    color: #ffffff;
+}
+
+#st_donate:hover #st_donate_t {
+    display: none
+}
+
+#st_donate:hover:before {
+    content: 'THANK THE AUTHOR'
+}
+
+.st-rounded-list {
+    counter-reset: li;
+    list-style: none;
+    padding: 0;
+    margin-left: 1em;
+}
+
+.st-rounded-list span {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    margin: .5em 0;
+    background: #ecf0f1;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: .3s ease-out;
+    cursor: pointer;
+}
+
+.st-rounded-list span:hover {
+    background: #bdc3c7;
+}
+
+.st-rounded-list span:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #1abc9c;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #ffffff;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+
+.st-table {
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    border-spacing: 0;
+}
+
+.st-table th {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 10px 20px;
+}
+
+.st-table th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: #ffffff;
+}
+
+.st-table th:first-child, td:first-child {
+    text-align: left;
+}
+
+.st-table th:first-child {
+    border-top-left-radius: 10px;
+}
+.st-table th:last-child {
+    border-top-right-radius: 10px;
+    border-right: none;
+}
+
+.st-table td {
+    padding: 10px 20px;
+    background: #1abc9c;
+    color: #ffffff;
+}
+.st-table tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+.st-table tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+.st-table tr td:last-child {
+    border-right: none;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .st-flex {
+        flex-direction: column;
+    }
+
+    .st-flex-content {
+        margin-right: 0;
+    }
+
+    .st-flex-sidebar {
+        margin-left: 0;
+    }
+
+    .st-widget:last-child {
+        margin-bottom: 25px;
+    }
+
+}

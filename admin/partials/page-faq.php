@@ -13,28 +13,68 @@
 
 	<h1><?php _e('SteeplyRef - FAQ', 'steeply-ref'); ?></h1>
 
-    <div class="notice notice-success">
-        <p>
-            This plugin has been and will <b>always be free for you</b>.
-            If you want to <b>help the development</b> of the plugin financially,
-            write to me an <a target="_blank" href="mailto:arthur.patriot@gmail.com">Email</a>
-            or <a target="_blank" href="https://t.me/ArthurPatriot">Telegram</a>.
-        </p>
+    <div class="st-flex">
+
+        <div class="st-flex-content">
+
+            <div>
+                <h2>User Guide</h2>
+            </div>
+
+            <div class="st-widget st-blue">
+                <p class="st-widget__title">Referral Link Shortcode</p>
+                <input readonly type="text" class="st-widget__shortcode" value="[st_ref_link]">
+            </div>
+
+            <div class="st-widget st-blue">
+                <p class="st-widget__title">Referral Count Shortcode</p>
+                <input readonly type="text" class="st-widget__shortcode" value="[st_ref_count]">
+            </div>
+
+        </div>
+
+
+        <div class="st-flex-content">
+
+            <div>
+                <h2>Developer Guide</h2>
+            </div>
+
+            <div class="st-widget st-info">
+                <p class="st-widget__title">Example Referral Link</p>
+                <input readonly type="text" class="st-widget__shortcode" value="<?= home_url(); ?>/?st_ref=[user_id]">
+            </div>
+
+        </div>
+
+	    <?php require_once plugin_dir_path(__FILE__).'part-flex-sidebar.php';?>
+
     </div>
 
-    <h2>User Guide</h2>
+    <h2>FAQ</h2>
 
-    <p>Example, Referral link - <input class="regular-text" readonly type="text" value="<?= home_url(); ?>/?st_ref=[user_id]"></p>
+    <div class="st-flex">
 
-    <p>Get referral link - <input readonly type="text" value="[st_ref_link]"></p>
+        <div class="st-flex-content st-faq">
 
-    <p>Show Count referral  - <input readonly type="text" value="[st_ref_count]"></p>
+            <div class="st-widget">
+                <p class="st-widget__faq-title"><span class="dashicons dashicons-format-status"></span> HOW?</p>
+                <p class="st-widget__faq-text"><span class="dashicons dashicons-yes-alt"></span> HOW!</p>
+            </div>
 
-    <p>I just recently started developing this plugin, if you have ideas for improving it, contact me.</p>
+        </div>
 
-    <h2>Developer Guide</h2>
 
-    <p>I plan to make the plugin as convenient as possible for developers, if you have any ideas, write to me.</p>
+        <div class="st-flex-content st-faq">
+
+            <div class="st-widget">
+                <p class="st-widget__faq-title"><span class="dashicons dashicons-format-status"></span> HOW?</p>
+                <p class="st-widget__faq-text"><span class="dashicons dashicons-yes-alt"></span> HOW!</p>
+            </div>
+
+        </div>
+
+    </div>
 
 	<div class="clear"></div>
 
