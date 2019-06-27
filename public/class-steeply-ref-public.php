@@ -27,7 +27,7 @@ class Steeply_Ref_Public {
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $plugin_name    The ID of this plugin.
+	 * @var      string $plugin_name The ID of this plugin.
 	 */
 	private $plugin_name;
 
@@ -36,21 +36,22 @@ class Steeply_Ref_Public {
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $version    The current version of this plugin.
+	 * @var      string $version The current version of this plugin.
 	 */
 	private $version;
 
 	/**
 	 * Initialize the class and set its properties.
 	 *
+	 * @param string $plugin_name The name of the plugin.
+	 * @param string $version The version of this plugin.
+	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of the plugin.
-	 * @param      string    $version    The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
+		$this->version     = $version;
 
 	}
 
@@ -100,6 +101,20 @@ class Steeply_Ref_Public {
 
 	}
 
+	public function catch_dashboard_page( $template ) {
+
+		global $post;
+
+		if ( $post->ID == get_option( 'st_settings_pg_dashboard' ) ) {
+
+			return plugin_dir_path( __FILE__ ) . 'partials/page-dashboard.php';
+
+		}
+
+		return $template;
+
+	}
+
 	public function shortcode_referral_link() {
 
 		$user_id = get_current_user_id();
@@ -124,7 +139,7 @@ class Steeply_Ref_Public {
 		}
 
 		$table_name = ST_REFERRALS;
-		$check = $wpdb->get_var("SELECT COUNT(id) FROM $table_name WHERE ref_user_id = $user_id");
+		$check      = $wpdb->get_var( "SELECT COUNT(id) FROM $table_name WHERE ref_user_id = $user_id" );
 
 		if ( $check == null or empty( $check ) ) {
 			return '0';

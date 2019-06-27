@@ -144,6 +144,65 @@ class Steeply_Ref_Admin {
 
 	}
 
+	public function add_general_settings() {
+		add_settings_section( 'st-general-settings-section', '', '', 'steeply-ref-general-settings' );
+
+		register_setting( 'st-general-settings-section', 'st_settings_extended' );
+		register_setting( 'st-general-settings-section', 'st_settings_template' );
+		register_setting( 'st-general-settings-section', 'st_settings_pg_dashboard' );
+
+		add_settings_field( 'st_settings_extended', 'Enable Extended Engine', 'st_settings_extended_field', 'steeply-ref-general-settings', 'st-general-settings-section' );
+		add_settings_field( 'st_settings_template', 'Styling Theme', 'st_settings_template_field', 'steeply-ref-general-settings', 'st-general-settings-section' );
+		add_settings_field( 'st_settings_pg_dashboard', 'Referral Dashboard Page', 'st_settings_pg_dashboard_field', 'steeply-ref-general-settings', 'st-general-settings-section' );
+
+		/**
+		 * General Setting Page - Extended Engine
+		 */
+		function st_settings_extended_field() {
+			$val = get_option( 'st_settings_extended' );
+			$val = $val ? $val : null;
+			?>
+            <label class="st-switch" for="st_settings_extended">
+                <input type="checkbox" id="st_settings_extended" name="st_settings_extended"
+                       aria-describedby="st_settings_extended_desc" value="1" <?php checked( 1, $val ) ?>>
+                <span class="st-slider st-round"></span>
+            </label>
+            <p class="description" id="st_settings_extended_desc">Activate plugin templates</p>
+			<?php
+		}
+
+		/**
+		 * General Setting Page - Theme Select
+		 */
+		function st_settings_template_field() {
+			$val = get_option( 'st_settings_template' );
+			$val = $val ? $val : null;
+			?>
+            <select required name="st_settings_template" id="st_settings_template">
+                <option <?php selected( $val, 'default' ); ?> value="default">Default Material</option>
+                <option disabled <?php selected( $val, 'clear' ); ?> value="clear">Clear Material</option>
+                <option disabled <?php selected( $val, 'ionic' ); ?> value="ionic">Ionic Material</option>
+            </select>
+			<?php
+		}
+
+		/**
+		 * General Setting Page - Dashboard
+		 */
+		function st_settings_pg_dashboard_field() {
+			$val = get_option( 'st_settings_pg_dashboard' );
+			$val = $val ? $val : null;
+
+			$args = array(
+				'selected'         => $val,
+				'show_option_none' => 'Select Page',
+				'name'             => 'st_settings_pg_dashboard',
+			);
+
+			wp_dropdown_pages( $args );
+		}
+	}
+
 	static function render_dashboard_widget() {
 		require_once plugin_dir_path(__FILE__) . 'partials/dashboard-widget.php';
 	}

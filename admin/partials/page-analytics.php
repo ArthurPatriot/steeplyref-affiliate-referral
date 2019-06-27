@@ -126,7 +126,7 @@ if ( $count_users_with != null and $count_users_all != null ) {
                     datasets: [{
                         label: 'Register Analytics',
                         backgroundColor: ['#2980b9', '#2ecc71'],
-                        data: [<?= $count_users_without; ?>, <?= $count_users_with; ?>]
+                        data: [<?= $count_users_without; ?>,<?= $count_users_with; ?>]
                     }]
                 },
                 options: {

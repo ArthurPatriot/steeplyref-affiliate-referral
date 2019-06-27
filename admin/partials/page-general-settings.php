@@ -71,7 +71,13 @@ if ( $wp_version > 5.0 ) {
             </div>
 
             <div class="st-widget">
-                Setting form
+                <form action="options.php" method="POST">
+		            <?php
+		            settings_fields( 'st-general-settings-section' );
+		            do_settings_sections( 'steeply-ref-general-settings' );
+		            submit_button();
+		            ?>
+                </form>
             </div>
 
         </div>

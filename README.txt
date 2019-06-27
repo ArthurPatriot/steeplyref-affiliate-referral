@@ -27,9 +27,16 @@ The plugin is being actively developed. Therefore, I will be happy to help you. 
 All information can be found on the FAQ page in the plugin menu.
 
 == Screenshots ==
-1. Example View
+1. Plugin Page Settings
+2. Plugin Page Analytics
+3. Plugin Page FAQ
+4. Plugin Page User Dashboard
 
 == Changelog ==
+
+= 1.1.0 =
+* New Design Features
+* New functionality
 
 = 1.0.8 =
 
@@ -44,5 +51,5 @@ All information can be found on the FAQ page in the plugin menu.
 
 == Upgrade Notice ==
 
-= 1.0.8 =
+= 1.1.0 =
 Upgrade for awesome new features! Improved stability and speed.
