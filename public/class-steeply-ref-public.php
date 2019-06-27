@@ -120,17 +120,48 @@ class Steeply_Ref_Public {
 		$user_id = get_current_user_id();
 
 		if ( ! $user_id ) {
-			return '';
+			return '0';
 		}
 
 		$table_name = ST_REFERRALS;
 		$check = $wpdb->get_var("SELECT COUNT(id) FROM $table_name WHERE ref_user_id = $user_id");
 
-		if ($check == null) {
-			return '';
+		if ( $check == null or empty( $check ) ) {
+			return '0';
 		}
 
 		return $check;
+
+	}
+
+	public function shortcode_referral_top_list( $atts ) {
+		global $wpdb;
+
+		$atts = shortcode_atts( array(
+			'top'    => 3,
+			'render' => true
+		), $atts );
+
+		$table_name = ST_REFERRALS;
+		$limit      = $atts['top'];
+
+		$check = $wpdb->get_results( "SELECT DISTINCT ref_user_id, COUNT(id) AS count FROM $table_name ORDER BY count DESC LIMIT $limit" );
+
+		if ( $check == null or $check[0]->ref_user_id == null ) {
+			return '';
+		}
+
+		if ( ! $atts['render'] ) {
+			return $check;
+		}
+
+		ob_start(); ?>
+        <ol class="st-top-list">
+			<?php foreach ( $check as $item ) { ?>
+                <li><?= get_userdata( $item->ref_user_id )->display_name; ?> - <?= $item->count; ?></li>
+			<?php } ?>
+        </ol>
+		<?php return ob_get_clean();
 
 	}
 

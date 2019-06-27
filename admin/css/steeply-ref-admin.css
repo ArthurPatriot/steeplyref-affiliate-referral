@@ -210,10 +210,6 @@
     border-color: #ffffff;
 }
 
-.st-table th:first-child, td:first-child {
-    text-align: left;
-}
-
 .st-table th:first-child {
     border-top-left-radius: 10px;
 }

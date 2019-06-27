@@ -192,6 +192,7 @@ class Steeply_Ref {
 
 		$this->loader->add_shortcode( 'st_ref_link', $plugin_public, 'shortcode_referral_link' );
 		$this->loader->add_shortcode( 'st_ref_count', $plugin_public, 'shortcode_referral_count' );
+		$this->loader->add_shortcode( 'st_ref_top_list', $plugin_public, 'shortcode_referral_top_list' );
 
 	}
 

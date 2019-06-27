@@ -31,11 +31,18 @@ All information can be found on the FAQ page in the plugin menu.
 
 == Changelog ==
 
+= 1.0.8 =
+
+* Admin Panel Features
+* Analytics
+* FAQ
+* Bug Checker
+
 = 1.0.7 =
 
 * Release
 
 == Upgrade Notice ==
 
-= 1.0.7 =
+= 1.0.8 =
 Upgrade for awesome new features! Improved stability and speed.
