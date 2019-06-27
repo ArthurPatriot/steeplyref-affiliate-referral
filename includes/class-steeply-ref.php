@@ -168,6 +168,7 @@ class Steeply_Ref {
 		$this->loader->add_action( 'wp_logout', $plugin_admin, 'session_close' );
 
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_plugin_pages' );
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'add_general_settings' );
 
 		$this->loader->add_action( 'wp_dashboard_setup', $plugin_admin, 'add_plugin_dashboard_widget' );
 
@@ -192,6 +193,9 @@ class Steeply_Ref {
 
 		$this->loader->add_shortcode( 'st_ref_link', $plugin_public, 'shortcode_referral_link' );
 		$this->loader->add_shortcode( 'st_ref_count', $plugin_public, 'shortcode_referral_count' );
+		$this->loader->add_shortcode( 'st_ref_top_list', $plugin_public, 'shortcode_referral_top_list' );
+
+		$this->loader->add_filter( 'template_include', $plugin_public, 'catch_dashboard_page' );
 
 	}
 

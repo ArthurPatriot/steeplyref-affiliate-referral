@@ -36,6 +36,26 @@ if ( session_id() ) {
 	$check_ses_text  = 'PHP SESSION ERROR';
 }
 
+/**
+ *
+ */
+if ( phpversion() > 5.5 ) {
+	$check_php_class = 'st-line-success';
+	$check_php_text  = 'PHP ' . phpversion() . ' ACTUAL';
+} else {
+	$check_php_class = 'st-line-danger';
+	$check_php_text  = 'PHP ' . phpversion() . ' OUTDATED';
+}
+
+global $wp_version;
+if ( $wp_version > 5.0 ) {
+	$check_wp_class = 'st-line-success';
+	$check_wp_text  = 'WORDPRESS VERSION ' . $wp_version . ' ACTUAL';
+} else {
+	$check_wp_class = 'st-line-danger';
+	$check_wp_text  = 'WORDPRESS VERSION ' . $wp_version . ' OUTDATED';
+}
+
 ?>
 
 <div class="wrap">
@@ -51,7 +71,13 @@ if ( session_id() ) {
             </div>
 
             <div class="st-widget">
-                Setting form
+                <form action="options.php" method="POST">
+		            <?php
+		            settings_fields( 'st-general-settings-section' );
+		            do_settings_sections( 'steeply-ref-general-settings' );
+		            submit_button();
+		            ?>
+                </form>
             </div>
 
         </div>
@@ -69,6 +95,14 @@ if ( session_id() ) {
 
             <div class="st-widget <?= $table_referrals_class; ?>">
                 <p class="st-widget__title" style="margin-bottom: 0"><?= $table_referrals_text; ?></p>
+            </div>
+
+            <div class="st-widget <?= $check_php_class; ?>">
+                <p class="st-widget__title" style="margin-bottom: 0"><?= $check_php_text; ?></p>
+            </div>
+
+            <div class="st-widget <?= $check_wp_class; ?>">
+                <p class="st-widget__title" style="margin-bottom: 0"><?= $check_wp_text; ?></p>
             </div>
 
         </div>

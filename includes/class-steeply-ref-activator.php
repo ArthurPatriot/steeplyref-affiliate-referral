@@ -41,6 +41,7 @@ class Steeply_Ref_Activator {
 	                    user_id mediumint(7) NOT NULL,
 	                    ref_user_id mediumint(7) NOT NULL,
 	                    lvl tinyint(1) DEFAULT 1 NOT NULL,
+	                    date datetime default NOW() null,
 	                    PRIMARY KEY  id (id),
 	                    UNIQUE KEY id (id)
 	                    );";

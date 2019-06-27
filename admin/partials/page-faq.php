@@ -31,6 +31,12 @@
                 <input readonly type="text" class="st-widget__shortcode" value="[st_ref_count]">
             </div>
 
+            <div class="st-widget st-blue">
+                <p class="st-widget__title">Referrer Top List</p>
+                <p class="st-widget__text">Shortcode has optional attribute 'top', on default = 3.</p>
+                <input readonly type="text" class="st-widget__shortcode" value="[st_ref_top_list top='10']">
+            </div>
+
         </div>
 
 
