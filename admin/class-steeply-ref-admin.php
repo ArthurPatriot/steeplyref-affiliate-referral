@@ -132,6 +132,10 @@ class Steeply_Ref_Admin {
 		require_once plugin_dir_path(__FILE__) . 'partials/page-faq.php';
 	}
 
+	static function render_page_integration() {
+		require_once plugin_dir_path( __FILE__ ) . 'partials/page-integration.php';
+	}
+
 	public function add_plugin_pages() {
 
 		add_menu_page( 'SteeplyRef - General Settings', 'SteeplyRef', 'manage_options', 'steeply-ref-general-settings', array( $this, 'render_page_general_settings' ), 'dashicons-image-filter', 25.3 );
@@ -141,6 +145,8 @@ class Steeply_Ref_Admin {
 		add_submenu_page( 'steeply-ref-general-settings', 'SteeplyRef - Analytics', 'Analytics', 'manage_options', 'steeply-ref-analytics', array( $this, 'render_page_analytics' ) );
 
 		add_submenu_page( 'steeply-ref-general-settings', 'SteeplyRef - FAQ', 'FAQ', 'manage_options', 'steeply-ref-faq', array( $this, 'render_page_faq' ) );
+
+		//add_submenu_page( 'steeply-ref-general-settings', 'SteeplyRef - Integration', 'Integration', 'manage_options', 'steeply-ref-integration', array( $this, 'render_page_integration' ) );
 
 	}
 

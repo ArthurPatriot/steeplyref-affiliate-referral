@@ -72,7 +72,7 @@ class Steeply_Ref {
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'steeply-ref';
+		$this->plugin_name = 'steeplyref-affiliate-referral';
 
 		$this->define_static();
 		$this->load_dependencies();
