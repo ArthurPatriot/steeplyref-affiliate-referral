@@ -60,7 +60,7 @@ if ( $wp_version > 5.0 ) {
 
 <div class="wrap">
 
-	<h1><?php _e('SteeplyRef - General Settings', 'steeply-ref'); ?></h1>
+    <h1><?php _e( 'SteeplyRef - General Settings', 'steeplyref-affiliate-referral' ); ?></h1>
 
     <div class="st-flex">
 

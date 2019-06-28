@@ -11,7 +11,7 @@
 ?>
 <div class="wrap">
 
-	<h1><?php _e('SteeplyRef - FAQ', 'steeply-ref'); ?></h1>
+    <h1><?php _e( 'SteeplyRef - FAQ', 'steeplyref-affiliate-referral' ); ?></h1>
 
     <div class="st-flex">
 

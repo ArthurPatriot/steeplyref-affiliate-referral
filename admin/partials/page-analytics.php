@@ -32,7 +32,7 @@ if ( $count_users_with != null and $count_users_all != null ) {
 ?>
 <div class="wrap">
 
-	<h1><?php _e('SteeplyRef - Analytics', 'steeply-ref'); ?></h1>
+    <h1><?php _e( 'SteeplyRef - Analytics', 'steeplyref-affiliate-referral' ); ?></h1>
 
     <div class="st-flex">
 
