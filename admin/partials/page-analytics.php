@@ -15,9 +15,9 @@ global $wpdb;
 
 $table_referrals = ST_REFERRALS;
 $table_users     = $wpdb->prefix . 'users';
-$check_top_ref   = $wpdb->get_results( "SELECT DISTINCT ref_user_id, COUNT(id) AS count FROM $table_referrals ORDER BY count DESC LIMIT 10" );
+$check_top_ref   = $wpdb->get_results( "SELECT DISTINCT ref_user_id, COUNT(id) AS count FROM $table_referrals GROUP BY ref_user_id ORDER BY count DESC LIMIT 10" );
 
-$last_activity = $wpdb->get_results( "SELECT * FROM $table_referrals ORDER BY id LIMIT 10" );
+$last_activity = $wpdb->get_results( "SELECT * FROM $table_referrals ORDER BY id DESC LIMIT 10" );
 
 $count_users_with = $wpdb->get_var( "SELECT COUNT(id) as count FROM $table_referrals WHERE date >= DATE_SUB(curdate(), interval 1 month)" );
 $count_users_all  = $wpdb->get_var( "SELECT COUNT(id) as count FROM $table_users WHERE user_registered >= DATE_SUB(curdate(), interval 1 month)" );
