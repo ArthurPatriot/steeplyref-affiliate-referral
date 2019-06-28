@@ -160,7 +160,7 @@ class Steeply_Ref_Public {
 		$table_name = ST_REFERRALS;
 		$limit      = $atts['top'];
 
-		$check = $wpdb->get_results( "SELECT DISTINCT ref_user_id, COUNT(id) AS count FROM $table_name ORDER BY count DESC LIMIT $limit" );
+		$check = $wpdb->get_results( "SELECT DISTINCT ref_user_id, COUNT(id) AS count FROM $table_name GROUP BY ref_user_id ORDER BY count DESC LIMIT $limit" );
 
 		if ( $check == null or $check[0]->ref_user_id == null ) {
 			return '';

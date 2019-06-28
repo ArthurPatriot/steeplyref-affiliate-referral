@@ -215,7 +215,7 @@ class Steeply_Ref_Admin {
 
 	public function check_is_referral_link() {
 		if (isset($_GET['st_ref']) and !empty($_GET['st_ref'])) {
-			$_SESSION['ref_user_id'] = htmlspecialchars(settype($_GET['st_ref'], 'int'));
+			$_SESSION['ref_user_id'] = htmlspecialchars( $_GET['st_ref'] );
 		}
 	}
 	
