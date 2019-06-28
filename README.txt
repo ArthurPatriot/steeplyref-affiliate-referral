@@ -34,6 +34,9 @@ All information can be found on the FAQ page in the plugin menu.
 
 == Changelog ==
 
+= 1.1.1 =
+* Hotfix Update
+
 = 1.1.0 =
 * New Design Features
 * New functionality
